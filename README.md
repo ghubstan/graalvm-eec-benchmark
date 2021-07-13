@@ -57,15 +57,15 @@ I found:
 
 - The native image's resident memory (OS physical memory) use was ~45% smaller than the heap size of the app when running on OpenJDK 16's jvm.
 
-- No significance difference was found in performance.
+- No significant difference was found in performance.
 
 
 I also built a native image from Bisq's desktop-all.jar, but it wouldn't run due to reflection related class-not-found 
 errors.  The broken native app's size was 38 Mb, as compared to ~ 140Mb size of the current master's desktop-all.jar.
 
-A native image built from a bare bones project containing a small subset of Bisq dependencies failed at startup due to 
-Logger initialization code in 3rd party libaries.
+A native image built from a bare-bones project containing a small subset of Bisq dependencies failed at startup due to 
+Logger initialization code in a 3rd party library.
 
-We (@chimp1984 and I) decided to not spend more time debugging GraalVM native image builds, in part because of the 
-known issues with the experimental feature:  https://www.graalvm.org/release-notes/known-issues.
+We (@chimp1984 and I) decided to not spend time debugging GraalVM native image builds, in part because of the 
+known (and unknown) issues in GraalVM:  https://www.graalvm.org/release-notes/known-issues.
 
