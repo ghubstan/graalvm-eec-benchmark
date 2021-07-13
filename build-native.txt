@@ -1,0 +1,13 @@
+export GRAALVM_HOME="/home/me/runtime/graalvm/graalvm-ce-java16-21.1.0"
+export JAVA_HOME="$GRAALVM_HOME"
+
+
+
+
+# You do not have to specify each jar; you can use bash to build the colon delimited classpath.
+
+$GRAALVM_HOME/bin/native-image -cp "$(printf %s: lib/*.jar)"    --no-fallback --no-server -H:Class=mandioca.benchmarks.BenchmarkApp -H:Name=bmk-app
+ 
+ 
+
+

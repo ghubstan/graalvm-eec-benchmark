@@ -1,0 +1,12 @@
+[main] INFO BenchmarkApp - Starting benchmark jobs ...
+[main] INFO BenchmarkApp - Running HashToAddressBenchmark
+[main] INFO BenchmarkApp - Running Rfc6979Benchmark
+[main] INFO BenchmarkApp - Running Rfc6979Benchmark
+[main] INFO RunBashCommand - System Load
+mandioca.benchmarks.BenchmarkApp.run(BenchmarkApp.java:31)
+mandioca.benchmarks.BenchmarkApp.main(BenchmarkApp.java:36)
+    ...
+    [main] INFO BenchmarkApp - [ $ ps -aux --sort -rss --headers ]
+    USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    meee       56043  169  9.9 14006208 3274336 ?    Sl   16:24   8:12 /me/meee/runti ...
+    System load: Memory (MB): 40 / No. of threads: 2 JVM uptime (ms): 327

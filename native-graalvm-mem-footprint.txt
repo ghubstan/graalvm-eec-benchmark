@@ -1,0 +1,40 @@
+[main] INFO mandioca.benchmarks.BenchmarkApp - Starting benchmark jobs ...
+[main] INFO mandioca.benchmarks.BenchmarkApp - Running HashToAddressBenchmark
+[main] INFO mandioca.benchmarks.BenchmarkApp - Running Rfc6979Benchmark
+[main] INFO mandioca.benchmarks.BenchmarkApp - Running Rfc6979Benchmark
+[main] INFO mandioca.benchmarks.bash.RunBashCommand - System Load
+mandioca.benchmarks.BenchmarkApp.run(BenchmarkApp.java:31)
+mandioca.benchmarks.BenchmarkApp.main(BenchmarkApp.java:36)
+...
+    [main] INFO mandioca.benchmarks.BenchmarkApp - [ $ ps -aux --sort -rss --headers ]
+    USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    meee     60201  242  5.7 13278064 1897052 ?    Sl   16:34   1:10 /home/meee/runti ...
+    System load: Memory (MB): 63 / No. of threads: 1 JVM uptime (ms): 293
+
+
+
+    USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    meee     52013  188 10.4 13872128 3440136 ?    Sl   16:15   9:07 /home/meee/runti [JDK 16]
+    meee     60201  242  5.7 13278064 1897052 ?    Sl   16:34   1:10 /home/meee/runti [NATIVE]
+
+
+Native Graal App's java heap is ~ 43% bigger.
+Native Graal App's native resident memory use is ~45% smaller.
+
+Built native Bisq image from desktop fat jar, but it wouldn't run due to reflection related class-not-found errors.  The broken native app's size was 38 Mb.
+
+Memory footprint comparisons from running ECC functions:
+
+    Native Graal App's java heap is ~43% bigger than running on jdk 16.
+    Native Graal App's native resident memory use is ~45% smaller than running on jdk 16.
+    I think that is positive, since we can control heap better and easier than we can control native mem usage from java.
+
+    JVM HEAP
+    System load: Memory (MB): 36 / No. of threads: 1 JVM uptime (ms): 337   [JDK 16]
+    System load: Memory (MB): 63 / No. of threads: 1 JVM uptime (ms): 293   [NATIVE]
+
+    NATIVE MEM
+    USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    meee     52013  188 10.4 13872128 3440136 ?    Sl   16:15   9:07 /home/meee/runti [JDK 16]
+    meee     60201  242  5.7 13278064 1897052 ?    Sl   16:34   1:10 /home/meee/runti [NATIVE]
+

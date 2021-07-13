@@ -1,0 +1,46 @@
+plugins {
+    id 'java-library'
+    id 'application'
+    id 'distribution'
+}
+
+group 'io.ghubstan'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 16
+targetCompatibility = 16
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'mandioca.benchmarks.BenchmarkApp')
+    }
+}
+
+application {
+    mainClass = 'mandioca.benchmarks.BenchmarkApp'
+}
+
+distributions {
+    main {
+        distributionBaseName = 'graalvm-bmk'
+    }
+}
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'org.openjdk.jmh:jmh-core:1.21'
+    annotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.21'
+
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+
+    testImplementation 'junit:junit:4.12'
+}
+
+clean.doFirst {
+    delete "${rootDir}/out"
+}
